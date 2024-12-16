@@ -1,0 +1,185 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: linear-gradient(to right, #87CEEB, #FFF44F);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* 標題 */
+  .question {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  /* 選項 */
+  .options {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    width: 60%;
+    margin: 40% auto 0 auto; /* 向下移動選項 */
+    z-index: 2;
+  }
+  
+  .option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: jelly 1.5s infinite;
+  }
+  
+  .option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .option:active {
+    transform: scale(0.95);
+  }
+  
+  .option.left {
+    background: #87CEEB;
+    color: white;
+  }
+  
+  .option.right {
+    background: #FFF44F;
+    color: black;
+  }
+  
+  /* 果凍動畫 */
+  @keyframes jelly {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* 左半邊：海洋元素 */
+  .water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, #00BFFF, #87CEEB 60%);
+    overflow: hidden;
+  }
+  
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 150%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23FFFFFF" fill-opacity="0.8" d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,176C672,171,768,181,864,176C960,171,1056,149,1152,149.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+    background-size: contain;
+    animation: wave-flow 6s infinite linear, wave-rise 3s infinite ease-in-out;
+  }
+  
+  @keyframes wave-flow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes wave-rise {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .fish {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 50px;
+    height: 30px;
+    background: orange;
+    border-radius: 50%;
+    animation: swim 4s infinite alternate;
+  }
+  
+  @keyframes swim {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(20px);
+    }
+  }
+  
+  /* 右半邊：馬戲團元素 */
+  .circus {
+    position: absolute;
+    right: 25%;
+    top: 30%;
+  }
+  
+  .tent {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    background: linear-gradient(to bottom, #FF6347, #FFD700);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .ball {
+    position: absolute;
+    bottom: -30px;
+    left: 35%;
+    width: 30px;
+    height: 30px;
+    background: #FF6347;
+    border-radius: 50%;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  

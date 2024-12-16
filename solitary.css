@@ -1,0 +1,82 @@
+/* General Body Styling */
+body {
+    background-color: #191970; /* Midnight Blue */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Main content styling */
+main {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent dark background */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.start-btn {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #f1c40f; /* Yellow color */
+    color: #191970; /* Midnight Blue */
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #f39c12; /* Darker yellow on hover */
+    box-shadow: 0 0 25px rgba(241, 196, 15, 0.8);
+}
+
+/* Glowing streetlight effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px 2px rgba(255, 255, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 5px 2px rgba(255, 255, 0, 0.5);
+    }
+}
+
+/* Create the glowing streetlight effect in the corner */
+.streetlight {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: glow 1.5s infinite;
+}
+
+/* Add some padding around the page to ensure text isn't too close to the edges */
+body {
+    padding: 30px;
+}

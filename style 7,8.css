@@ -1,0 +1,128 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 左半：大漩渦風格 */
+.left-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #800020; /* 深紅背景 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vortex {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: conic-gradient(from 0deg, #800020, #ff4757, #800020);
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 右半：大石頭掉落風格 */
+.right-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #708090; /* 石灰藍色背景 */
+    overflow: hidden;
+}
+
+.rock {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #2f4f4f; /* 深灰色石頭 */
+    border-radius: 20%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    animation: fall-rock 5s linear infinite;
+}
+
+@keyframes fall-rock {
+    0% {
+        transform: translateY(-150px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh) rotate(720deg);
+        opacity: 0.3;
+    }
+}
+
+/* 標題與選項 */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 50px; /* 避免標題覆蓋按鈕 */
+}
+
+.question {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.options {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 50px auto 0 auto; /* 確保按鈕有足夠空間 */
+    z-index: 2;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.4);
+}
+
+.option.left {
+    background: #800020;
+}
+
+.option.right {
+    background: #708090;
+}

@@ -1,0 +1,104 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #50e590, #fef285);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #FF5733;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FFEB3B;
+}
+
+main {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FF5733;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+h1 span {
+    color: #FFEB3B;
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: rgb(240, 157, 74);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: #FF5733;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #FFEB3B;
+    transform: scale(1.1);
+}
+
+/* Jelly animation for the text (plays only once) */
+@keyframes jelly {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.05) rotate(-3deg);
+    }
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+    75% {
+        transform: scale(1.05) rotate(3deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}

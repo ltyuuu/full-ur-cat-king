@@ -1,0 +1,84 @@
+/* Set the background to a rotating vortex with Rosewood Red color */
+@keyframes vortex-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply the vortex animation to the body */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #800020; /* Rosewood Red */
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Create a rotating vortex effect using radial gradient */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.5) 60%);
+    animation: vortex-rotation 20s linear infinite;
+    z-index: -1; /* Behind the text */
+}
+
+/* Style for the main content */
+main {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly dark background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling for h1 with bold text */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Styling for h2 */
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Styling for the link/button */
+.start-btn {
+    background-color: #800020; /* Rosewood Red */
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #600018; /* Darker shade of Rosewood Red */
+    transform: scale(1.1);
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+}

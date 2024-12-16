@@ -1,0 +1,110 @@
+/* Reset 基本樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* 背景為白色 */
+    color: #000000; /* 預設文字為黑色 */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* 頁面標題 */
+header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* 連結文字為白色 */
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #000000; /* 背景為黑色 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff; /* 懸停時背景為白色 */
+    color: #000000; /* 懸停時文字為黑色 */
+    border: 1px solid #000000; /* 添加黑邊框 */
+}
+
+/* 主要內容 */
+main {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000000; /* 標題文字為黑色 */
+    text-shadow: none; /* 去掉陰影，簡約設計 */
+}
+
+h1 span {
+    color: #000000; /* 保持高亮文字為黑色 */
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #000000; /* 副標題為黑色 */
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* 按鈕樣式 */
+.start-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: #000000; /* 按鈕背景為黑色 */
+    color: #ffffff; /* 按鈕文字為白色 */
+    border-radius: 50px;
+    box-shadow: none; /* 去掉陰影 */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #ffffff; /* 懸停變為白色背景 */
+    color: #000000; /* 懸停文字為黑色 */
+    border: 1px solid #000000; /* 添加黑色邊框 */
+    transform: scale(1.1);
+}
+
+/* Jelly 動畫 (播放一次) */
+@keyframes jelly {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.05) rotate(-3deg);
+    }
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+    75% {
+        transform: scale(1.05) rotate(3deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}

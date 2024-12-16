@@ -1,0 +1,116 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: #87CEEB; /* 天空藍背景 */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+main {
+    text-align: center;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: white;
+    color: #87CEEB;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.1);
+}
+
+/* 動態雲朵 */
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: -40px -40px 0 -15px white;
+    opacity: 0.8;
+    animation: float 20s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: 50px;
+}
+
+.cloud::after {
+    width: 120px;
+    height: 120px;
+    top: -80px;
+    left: -70px;
+}
+
+.cloud.small {
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    left: 10%;
+    animation-duration: 15s;
+}
+
+.cloud.medium {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 50%;
+    animation-duration: 25s;
+}
+
+.cloud.large {
+    width: 180px;
+    height: 180px;
+    top: 10%;
+    left: 70%;
+    animation-duration: 30s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(120vw);
+    }
+}

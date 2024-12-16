@@ -1,0 +1,92 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFBF0; /* 淡黃色背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    text-align: center;
+    color: #333; /* Dark text color for contrast */
+  }
+  
+  /* 左右兩側區域 */
+  .left-section, .right-section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50vw; /* 半螢幕寬度 */
+    background: linear-gradient(135deg, #ff6f00, #ffca28); /* 橙色到黃色的漸變 */
+    opacity: 0.6;
+    z-index: -1;
+  }
+  
+  .left-section {
+    left: 0;
+  }
+  
+  .right-section {
+    right: 0;
+  }
+  
+  /* Container for the question and options */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    z-index: 1;
+  }
+  
+  /* Title styling */
+  .question {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #e64a19; /* 深橙紅色 */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling for the options */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .option {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #ff7043; /* 橙紅色背景 */
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 45%; /* 每個選項占頁面的一半 */
+  }
+  
+  .option:hover {
+    background-color: #ff5722; /* 橙紅色稍微深一點 */
+    transform: scale(1.05); /* 點擊時輕微放大 */
+  }
+  
+  .option:active {
+    background-color: #e64a19; /* 更深的橙紅色 */
+    transform: scale(1); /* 點擊後恢復正常大小 */
+  }
+  

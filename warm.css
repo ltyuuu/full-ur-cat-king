@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFB7B2; /* Peach Blossom Color */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    overflow: hidden;
+}
+
+/* Main Section */
+main {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 2.5em;
+    color: #FF5E57; /* Slightly darker peach */
+    margin-bottom: 20px;
+}
+
+/* Subheader Styles */
+h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-weight: 300;
+    position: relative;
+}
+
+/* Button Styles */
+.start-btn {
+    display: inline-block;
+    background-color: #FF5E57;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(255, 94, 87, 0.3);
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #FF3B2F;
+    box-shadow: 0 10px 20px rgba(255, 94, 87, 0.5);
+}
+
+/* Glowing Effects - Multiple light sources around the page */
+
+/* Largest light source in the corner */
+body::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: 5%;
+    box-shadow: 0 0 60px 20px rgba(255, 255, 255, 0.6);
+    z-index: -1;
+}
+
+/* Glowing lights around h2 */
+h2::before, h2::after, .glow-light {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 60px 15px rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+h2::before {
+    width: 120px;
+    height: 120px;
+    top: -10%;
+    left: -10%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.6);
+}
+
+h2::after {
+    width: 120px;
+    height: 120px;
+    top: -10%;
+    right: -10%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Peach-colored glow around h2 */
+.glow-light {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 40px 10px rgba(255, 181, 178, 0.5);
+}
+
+/* Additional light sources at the edges */
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFB7B2;
+    width: 150px;
+    height: 150px;
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 0 60px 10px rgba(255, 181, 178, 0.6);
+    z-index: -2;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.6);
+    z-index: -2;
+}

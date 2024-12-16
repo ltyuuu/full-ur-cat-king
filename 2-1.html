@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q2</title>
+  <link rel="stylesheet" href="style-rain.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const rainContainer = document.createElement('div');
+      rainContainer.classList.add('rain');
+      document.body.appendChild(rainContainer);
+  
+      const createRaindrop = () => {
+        const raindrop = document.createElement('div');
+        raindrop.classList.add('raindrop');
+        raindrop.style.width = `${Math.random() * 6 + 2}px`;
+        raindrop.style.height = raindrop.style.width;
+        raindrop.style.left = `${Math.random() * 100}vw`;
+        raindrop.style.animationDuration = `${Math.random() * 2 + 2}s`;
+  
+        rainContainer.appendChild(raindrop);
+  
+        setTimeout(() => {
+          raindrop.remove();
+        }, 3000);
+      };
+  
+      setInterval(createRaindrop, 100);
+    });
+  </script>
+  
+</head>
+<body>
+  <div class="container">
+    <h1 class="question">If it was raining outside, how would you feel？</h1>
+    <div class="options">
+      <a href="3-1.html" class="option">A. Relaxed and comforted</a>
+      <a href="3-2.html" class="option">B. Feel a little melancholic</a>
+    </div>
+  </div>
+</body>
+</html>
